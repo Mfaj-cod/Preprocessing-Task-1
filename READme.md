@@ -66,3 +66,7 @@ NOTE: Always split data before resampling to avoid data leakage.
 8.Can preprocessing affect model accuracy?
 
 => Absolutely, Preprocessing quality of data is one of the main factors in models's predicting accuracy.
+
+
+to regenerate the processed data and plots:
+run: python preprocess_data.py
