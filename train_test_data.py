@@ -42,8 +42,7 @@ def train_test_write(X_train, X_test, y_train, y_test):
 
     pdf_path = 'reports/report.pdf'
 
-    # Move PdfPages context manager OUTSIDE the loop
-    # to open the file once and write all pages to it.
+    # Move PdfPages context manager OUTSIDE the loop to open the file once and write all pages to it.
     with PdfPages(pdf_path) as pdf: 
         for i in range(len(list(models))):
             model_name = list(models.keys())[i]
