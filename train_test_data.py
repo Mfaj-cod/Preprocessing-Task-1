@@ -35,6 +35,7 @@ def train_test_write(X_train, X_test, y_train, y_test):
         "LogisticRegression": LogisticRegression(),
         "RidgeClassfier": RidgeClassifier(),
         "Random Forest": RandomForestClassifier(),
+        "SVC": SVC(),
         "decision tree": DecisionTreeClassifier(),
         "Gradient Boosting": GradientBoostingClassifier(),
         "AdaBoost": AdaBoostClassifier(),
