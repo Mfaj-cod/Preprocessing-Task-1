@@ -27,7 +27,6 @@ def load_prepared_data(train_path, test_path):
     y_train = training_data['Survived']
     y_test = testing_data['Survived']
 
-
     return X_train, X_test, y_train, y_test
 
 def train_test_write(X_train, X_test, y_train, y_test):
