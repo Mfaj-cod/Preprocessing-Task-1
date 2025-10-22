@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
 
-# models
+# ML-models
 from sklearn.linear_model import LogisticRegression, RidgeClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
@@ -43,7 +43,7 @@ def train_test_write(X_train, X_test, y_train, y_test):
 
     pdf_path = 'reports/report.pdf'
 
-    # Move PdfPages context manager OUTSIDE the loop to open the file once and write all pages to it.
+    # PdfPages context manager OUTSIDE the loop to open the file once and write all pages to it.
     with PdfPages(pdf_path) as pdf: 
         for i in range(len(list(models))):
             model_name = list(models.keys())[i]
@@ -53,7 +53,7 @@ def train_test_write(X_train, X_test, y_train, y_test):
 
             y_pred = model.predict(X_test)
 
-            # metrics
+            # calculating metrics
             aac = accuracy_score(y_test, y_pred)
             cr = classification_report(y_test, y_pred)
             cm = confusion_matrix(y_test, y_pred)
@@ -61,7 +61,7 @@ def train_test_write(X_train, X_test, y_train, y_test):
             # figure for the current model's report
             fig = plt.figure(figsize=(8.27, 11.69)) # A4 size
             
-            # Prepare the text for the report
+            # Preparing the text for the report
             txt = f"Model: {model_name}\n\n"
             txt += f"Accuracy: {aac:.4f}\n\n"
             txt += "Classification Report:\n"
@@ -69,7 +69,6 @@ def train_test_write(X_train, X_test, y_train, y_test):
             txt += "Confusion Matrix:\n"
             txt += str(cm)
             
-            # Display the text on the figure (you'd typically use ax.text for this)
             # A simple way to display this much text might be to use plt.text
             plt.text(0.05, 0.95, txt, transform=plt.gca().transAxes,
                      fontsize=10, verticalalignment='top', family='monospace')
