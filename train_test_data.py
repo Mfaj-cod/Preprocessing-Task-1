@@ -29,6 +29,7 @@ def load_prepared_data(train_path, test_path):
 
     return X_train, X_test, y_train, y_test
 
+
 def train_test_write(X_train, X_test, y_train, y_test):
     models = {
         "LogisticRegression": LogisticRegression(),
@@ -80,6 +81,7 @@ def train_test_write(X_train, X_test, y_train, y_test):
 def main(train_path, test_path):
     X_train, X_test, y_train, y_test = load_prepared_data(train_path, test_path)
     train_test_write(X_train, X_test, y_train, y_test)
+
 
 if __name__=="__main__":
     main('processed_data/Train.csv', 'processed_data/Test.csv')
